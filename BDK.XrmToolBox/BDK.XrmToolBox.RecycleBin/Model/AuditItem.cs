@@ -96,5 +96,7 @@ namespace BDK.XrmToolBox.RecycleBin.Model
         /// The audit detail.
         /// </value>
         public AttributeAuditDetail AuditDetail { get; set; }
+
+        public string EntityName { get; set; }
     }
 }
