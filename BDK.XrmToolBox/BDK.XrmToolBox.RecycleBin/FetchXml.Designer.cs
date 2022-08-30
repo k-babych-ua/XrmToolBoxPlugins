@@ -19,7 +19,7 @@ namespace BDK.XrmToolBox.RecycleBin {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class FetchXml {
@@ -61,7 +61,7 @@ namespace BDK.XrmToolBox.RecycleBin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;fetch&gt;
+        ///   Looks up a localized string similar to &lt;fetch no-lock=&quot;true&quot; top=&quot;5000&quot; &gt;
         ///  &lt;entity name=&quot;audit&quot; &gt;
         ///    &lt;attribute name=&quot;objecttypecodename&quot; /&gt;
         ///    &lt;attribute name=&quot;regardingobjectid&quot; /&gt;
@@ -70,11 +70,10 @@ namespace BDK.XrmToolBox.RecycleBin {
         ///    &lt;attribute name=&quot;userid&quot; /&gt;
         ///    &lt;attribute name=&quot;objectid&quot; /&gt;
         ///    &lt;attribute name=&quot;auditid&quot; /&gt;
+        ///	&lt;order attribute=&quot;createdon&quot; /&gt;
         ///    &lt;filter type=&quot;and&quot; &gt;
         ///      &lt;condition attribute=&quot;operation&quot; operator=&quot;eq&quot; value=&quot;3&quot; /&gt;
-        ///      &lt;condition attribute=&quot;createdon&quot; operator=&quot;between&quot; &gt;
-        ///        &lt;value&gt;{0}&lt;/value&gt;
-        ///        &lt;value&gt;{1}&lt;/ [rest of string was truncated]&quot;;.
+        ///      &lt;condition attribute=&quot;createdon&quot; operator= [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DeleteAuditLogsByUser {
             get {
@@ -83,7 +82,7 @@ namespace BDK.XrmToolBox.RecycleBin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;fetch&gt;
+        ///   Looks up a localized string similar to &lt;fetch no-lock=&quot;true&quot; top=&quot;5000&quot; &gt;
         ///  &lt;entity name=&quot;audit&quot; &gt;
         ///    &lt;attribute name=&quot;objecttypecodename&quot; /&gt;
         ///    &lt;attribute name=&quot;regardingobjectid&quot; /&gt;
@@ -96,8 +95,7 @@ namespace BDK.XrmToolBox.RecycleBin {
         ///    &lt;attribute name=&quot;actionname&quot; /&gt;
         ///    &lt;attribute name=&quot;action&quot; /&gt;
         ///    &lt;attribute name=&quot;objectidname&quot; /&gt;
-        ///    &lt;filter type=&quot;and&quot; &gt;
-        ///      &lt;condition attribute [rest of string was truncated]&quot;;.
+        ///    &lt;filter type=&quot;and&quot; &gt;        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DeletedAuditLogs {
             get {
@@ -106,13 +104,12 @@ namespace BDK.XrmToolBox.RecycleBin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;fetch version=&quot;1.0&quot; output-format=&quot;xml-platform&quot; mapping=&quot;logical&quot; distinct=&quot;false&quot; &gt;
+        ///   Looks up a localized string similar to &lt;fetch version=&quot;1.0&quot; output-format=&quot;xml-platform&quot; mapping=&quot;logical&quot; distinct=&quot;false&quot; no-lock=&quot;true&quot; top=&quot;5000&quot;&gt;
         ///  &lt;entity name=&quot;systemuser&quot; &gt;
         ///    &lt;attribute name=&quot;fullname&quot; /&gt;
         ///    &lt;attribute name=&quot;systemuserid&quot; /&gt;
         ///    &lt;filter type=&quot;and&quot; &gt;
         ///      &lt;condition attribute=&quot;isdisabled&quot; operator=&quot;eq&quot; value=&quot;0&quot; /&gt;
-        ///      &lt;condition attribute=&quot;accessmode&quot; operator=&quot;eq&quot; value=&quot;0&quot; /&gt;
         ///    &lt;/filter&gt;
         ///    &lt;order attribute=&quot;fullname&quot; /&gt;
         ///  &lt;/entity&gt;

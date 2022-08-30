@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DeleteAuditLogsByUser" xml:space="preserve">
-    <value>&lt;fetch&gt;
+    <value>&lt;fetch no-lock="true" top="5000" &gt;
   &lt;entity name="audit" &gt;
     &lt;attribute name="objecttypecodename" /&gt;
     &lt;attribute name="regardingobjectid" /&gt;
@@ -127,12 +127,11 @@
     &lt;attribute name="userid" /&gt;
     &lt;attribute name="objectid" /&gt;
     &lt;attribute name="auditid" /&gt;
+	&lt;order attribute="createdon" /&gt;
     &lt;filter type="and" &gt;
       &lt;condition attribute="operation" operator="eq" value="3" /&gt;
-      &lt;condition attribute="createdon" operator="between" &gt;
-        &lt;value&gt;{0}&lt;/value&gt;
-        &lt;value&gt;{1}&lt;/value&gt;
-      &lt;/condition&gt;
+      &lt;condition attribute="createdon" operator="on-or-after" value="{0}" /&gt;
+	  &lt;condition attribute="createdon" operator="on-or-before" value="{1}" /&gt;
       &lt;condition attribute="objecttypecode" operator="eq" value="{2}" /&gt;
       &lt;condition attribute="userid" operator="eq" value="{3}" /&gt;
     &lt;/filter&gt;
@@ -140,7 +139,7 @@
 &lt;/fetch&gt;</value>
   </data>
   <data name="DeletedAuditLogs" xml:space="preserve">
-    <value>&lt;fetch&gt;
+    <value>&lt;fetch no-lock="true" top="5000" &gt;
   &lt;entity name="audit" &gt;
     &lt;attribute name="objecttypecodename" /&gt;
     &lt;attribute name="regardingobjectid" /&gt;
@@ -155,23 +154,20 @@
     &lt;attribute name="objectidname" /&gt;
     &lt;filter type="and" &gt;
       &lt;condition attribute="operation" operator="eq" value="3" /&gt;
-      &lt;condition attribute="createdon" operator="between" &gt;
-        &lt;value&gt;{0}&lt;/value&gt;
-        &lt;value&gt;{1}&lt;/value&gt;
-      &lt;/condition&gt;
-      &lt;condition attribute="objecttypecode" operator="eq" value="{2}" /&gt;
+      &lt;condition attribute="createdon" operator="on-or-after" value="{0}" /&gt;
+	  &lt;condition attribute="createdon" operator="on-or-before" value="{1}" /&gt;
+      &lt;condition attribute="objecttypecode" operator="eq" value="{3}" /&gt;
     &lt;/filter&gt;
   &lt;/entity&gt;
 &lt;/fetch&gt;</value>
   </data>
   <data name="LicencedUsers" xml:space="preserve">
-    <value>&lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false" &gt;
+    <value>&lt;fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="false" no-lock="true" top="5000"&gt;
   &lt;entity name="systemuser" &gt;
     &lt;attribute name="fullname" /&gt;
     &lt;attribute name="systemuserid" /&gt;
     &lt;filter type="and" &gt;
       &lt;condition attribute="isdisabled" operator="eq" value="0" /&gt;
-      &lt;condition attribute="accessmode" operator="eq" value="0" /&gt;
     &lt;/filter&gt;
     &lt;order attribute="fullname" /&gt;
   &lt;/entity&gt;
