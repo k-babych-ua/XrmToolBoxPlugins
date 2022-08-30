@@ -148,6 +148,11 @@ namespace BDK.XrmToolBox.RecycleBin
                         FetchExpression query = null;
                         Tuple<int, string, string> selectedEntity = (Tuple<int, string, string>)ddlEntities.SelectedItem;
                         string auditFetchXml;
+
+                        string idCondition = !string.IsNullOrWhiteSpace(idBox.Text) ?
+                            $"<condition attribute=\"objectid\" operator=\"eq\" value=\"{idBox.Text}\" />" :
+                            "";
+
                         if (selectedUser == Guid.Empty)
                         {
                             auditFetchXml = string.Format(ConnectionDetail.OrganizationMajorVersion < 8 ? 
@@ -155,7 +160,8 @@ namespace BDK.XrmToolBox.RecycleBin
                                 FetchXml.DeletedAuditLogs, 
                                 dateFrom.Value.ToString("yyyy-MM-dd"), 
                                 dateTo.Value.AddDays(1).ToString("yyyy-MM-dd"),
-                                ddlEntities.SelectedValue);
+                                ddlEntities.SelectedValue,
+                                idCondition);
                         }
                         else
                         {
@@ -165,7 +171,8 @@ namespace BDK.XrmToolBox.RecycleBin
                                 dateFrom.Value.ToString("yyyy-MM-dd"),
                                 dateTo.Value.AddDays(1).ToString("yyyy-MM-dd"),
                                 ddlEntities.SelectedValue,
-                                selectedUser);
+                                selectedUser,
+                                idCondition);
                         }
                         query = new FetchExpression(auditFetchXml);                        
                         var queryResult = Service.RetrieveMultiple(query);

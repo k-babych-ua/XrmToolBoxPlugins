@@ -57,6 +57,8 @@
             this.fieldNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deletedFieldBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idLabel = new System.Windows.Forms.Label();
+            this.idBox = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridDeletedRecords)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.auditItemBindingSource)).BeginInit();
@@ -269,7 +271,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 21);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(1);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -293,9 +295,9 @@
             this.groupBox2.Controls.Add(this.btnShowRecords);
             this.groupBox2.Controls.Add(this.dateTo);
             this.groupBox2.Location = new System.Drawing.Point(530, 6);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(1);
             this.groupBox2.Size = new System.Drawing.Size(672, 91);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
@@ -303,14 +305,16 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.idBox);
+            this.groupBox1.Controls.Add(this.idLabel);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.ddlEntities);
             this.groupBox1.Controls.Add(this.ddlUsers);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(1, 1);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
             this.groupBox1.Size = new System.Drawing.Size(527, 96);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
@@ -320,7 +324,7 @@
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer2.IsSplitterFixed = true;
             this.splitContainer2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(1);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -371,6 +375,23 @@
             // deletedFieldBindingSource
             // 
             this.deletedFieldBindingSource.DataSource = typeof(BDK.XrmToolBox.RecycleBin.Model.DeletedField);
+            // 
+            // idLabel
+            // 
+            this.idLabel.AutoSize = true;
+            this.idLabel.Location = new System.Drawing.Point(281, 21);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(56, 13);
+            this.idLabel.TabIndex = 12;
+            this.idLabel.Text = "Record ID";
+            this.idLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // idBox
+            // 
+            this.idBox.Location = new System.Drawing.Point(344, 17);
+            this.idBox.Name = "idBox";
+            this.idBox.Size = new System.Drawing.Size(155, 20);
+            this.idBox.TabIndex = 13;
             // 
             // PluginControl
             // 
@@ -434,5 +455,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fieldNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valueDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource deletedFieldBindingSource;
+        private System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.TextBox idBox;
     }
 }

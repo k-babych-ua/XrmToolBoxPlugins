@@ -61,7 +61,7 @@ namespace BDK.XrmToolBox.RecycleBin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;fetch no-lock=&quot;true&quot; top=&quot;5000&quot; &gt;
+        ///   Looks up a localized string similar to &lt;fetch no-lock=&quot;true&quot; count=&quot;5000&quot; &gt;
         ///  &lt;entity name=&quot;audit&quot; &gt;
         ///    &lt;attribute name=&quot;objecttypecodename&quot; /&gt;
         ///    &lt;attribute name=&quot;regardingobjectid&quot; /&gt;
@@ -73,7 +73,7 @@ namespace BDK.XrmToolBox.RecycleBin {
         ///	&lt;order attribute=&quot;createdon&quot; /&gt;
         ///    &lt;filter type=&quot;and&quot; &gt;
         ///      &lt;condition attribute=&quot;operation&quot; operator=&quot;eq&quot; value=&quot;3&quot; /&gt;
-        ///      &lt;condition attribute=&quot;createdon&quot; operator= [rest of string was truncated]&quot;;.
+        ///      &lt;condition attribute=&quot;createdon&quot; operato [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DeleteAuditLogsByUser {
             get {
@@ -82,7 +82,7 @@ namespace BDK.XrmToolBox.RecycleBin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;fetch no-lock=&quot;true&quot; top=&quot;5000&quot; &gt;
+        ///   Looks up a localized string similar to &lt;fetch no-lock=&quot;true&quot; count=&quot;5000&quot; &gt;
         ///  &lt;entity name=&quot;audit&quot; &gt;
         ///    &lt;attribute name=&quot;objecttypecodename&quot; /&gt;
         ///    &lt;attribute name=&quot;regardingobjectid&quot; /&gt;
@@ -95,7 +95,7 @@ namespace BDK.XrmToolBox.RecycleBin {
         ///    &lt;attribute name=&quot;actionname&quot; /&gt;
         ///    &lt;attribute name=&quot;action&quot; /&gt;
         ///    &lt;attribute name=&quot;objectidname&quot; /&gt;
-        ///    &lt;filter type=&quot;and&quot; &gt;        /// [rest of string was truncated]&quot;;.
+        ///    &lt;filter type=&quot;and&quot;  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DeletedAuditLogs {
             get {

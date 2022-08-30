@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="DeleteAuditLogsByUser" xml:space="preserve">
-    <value>&lt;fetch no-lock="true" top="5000" &gt;
+    <value>&lt;fetch no-lock="true" count="5000" &gt;
   &lt;entity name="audit" &gt;
     &lt;attribute name="objecttypecodename" /&gt;
     &lt;attribute name="regardingobjectid" /&gt;
@@ -133,13 +133,13 @@
       &lt;condition attribute="createdon" operator="on-or-after" value="{0}" /&gt;
 	  &lt;condition attribute="createdon" operator="on-or-before" value="{1}" /&gt;
       &lt;condition attribute="objecttypecode" operator="eq" value="{2}" /&gt;
-      &lt;condition attribute="userid" operator="eq" value="{3}" /&gt;
+      &lt;condition attribute="userid" operator="eq" value="{3}" /&gt;{4}
     &lt;/filter&gt;
   &lt;/entity&gt;
 &lt;/fetch&gt;</value>
   </data>
   <data name="DeletedAuditLogs" xml:space="preserve">
-    <value>&lt;fetch no-lock="true" top="5000" &gt;
+    <value>&lt;fetch no-lock="true" count="5000" &gt;
   &lt;entity name="audit" &gt;
     &lt;attribute name="objecttypecodename" /&gt;
     &lt;attribute name="regardingobjectid" /&gt;
@@ -156,7 +156,7 @@
       &lt;condition attribute="operation" operator="eq" value="3" /&gt;
       &lt;condition attribute="createdon" operator="on-or-after" value="{0}" /&gt;
 	  &lt;condition attribute="createdon" operator="on-or-before" value="{1}" /&gt;
-      &lt;condition attribute="objecttypecode" operator="eq" value="{3}" /&gt;
+      &lt;condition attribute="objecttypecode" operator="eq" value="{2}" /&gt;{3}
     &lt;/filter&gt;
   &lt;/entity&gt;
 &lt;/fetch&gt;</value>
