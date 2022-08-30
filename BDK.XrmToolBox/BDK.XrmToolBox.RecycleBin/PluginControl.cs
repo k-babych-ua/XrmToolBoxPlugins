@@ -154,7 +154,7 @@ namespace BDK.XrmToolBox.RecycleBin
                                 FetchXml.DeletedAuditLogs.Replace("regardingobject", "object") : 
                                 FetchXml.DeletedAuditLogs, 
                                 dateFrom.Value.ToString("yyyy-MM-dd"), 
-                                dateTo.Value.AddDays(1).ToString("yyyy-MM-dd"), 
+                                dateTo.Value.AddDays(1).ToString("yyyy-MM-dd"),
                                 ddlEntities.SelectedValue);
                         }
                         else
@@ -187,6 +187,7 @@ namespace BDK.XrmToolBox.RecycleBin
                                     DeletionDate = (DateTime)item["createdon"],
                                     Entity = ((EntityReference)item["objectid"]).LogicalName,
                                     RecordId = ((EntityReference)item["objectid"]).Id,
+                                    EntityName = item.GetAttributeValue<string>("objecttypecode"),
                                     AuditDetail = attributeDetail,
                                     Metadata = metadata
                                 };
@@ -396,8 +397,14 @@ namespace BDK.XrmToolBox.RecycleBin
                                     recordsSelected = true;
                                     AuditItem audit = (AuditItem)row.DataBoundItem;
                                     Entity entity = audit.AuditDetail.OldValue;
+                                    string primarykey = entityMetadataList
+                                        .FirstOrDefault(x => x.LogicalName == audit.EntityName)
+                                        .PrimaryIdAttribute;
+
                                     entity.Attributes.Remove("statecode");
                                     entity.Attributes.Remove("statuscode");
+                                    entity[primarykey] = audit.RecordId;
+
                                     Service.Create(entity);
                                 }
                             }
@@ -516,5 +523,5 @@ namespace BDK.XrmToolBox.RecycleBin
         }
         #endregion
 
+        }
     }
-}
